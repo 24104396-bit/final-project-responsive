@@ -1,0 +1,89 @@
+/* Kiểu mặc định (Mobile First) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+figure {
+    margin: 0;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* 1. Truy vấn phương tiện thứ nhất (Bước 9) - Màn hình từ 480px trở lên */
+@media screen and (min-width: 480px) {
+    body {
+        background-color: #fcfcfc;
+        padding: 30px;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* 2. Truy vấn phương tiện thứ hai (Bước 11) - Điều chỉnh kiểu cho các div / grid từ 768px trở lên */
+@media screen and (min-width: 768px) {
+    .grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .grid figure {
+        width: 46%;
+    }
+}
+
+/* 3. Truy vấn phương tiện thứ ba (Bước 13) - Màn hình từ 1024px trở lên */
+@media screen and (min-width: 1024px) {
+    .grid figure {
+        width: 22%;
+    }
+    
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* 4. Truy vấn phương tiện thứ tư (Bước 15) - Điều chỉnh kiểu nâng cao cho các div / figure từ 1200px trở lên */
+@media screen and (min-width: 1200px) {
+    .grid figure {
+        background: #f0f4f8;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .grid figure:hover {
+        transform: translateY(-5px);
+    }
+}
